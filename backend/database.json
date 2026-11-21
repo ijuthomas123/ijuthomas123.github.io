@@ -1,0 +1,18 @@
+{
+  "reports": [
+    {
+      "id": "PEBEC-2026-1001",
+      "name": "Demo Citizen",
+      "mda": "CAC - Corporate Affairs Commission",
+      "state": "Zamfara",
+      "type": "Delay in Service",
+      "issue": "CAC registration delayed for 2 weeks",
+      "status": "Received",
+      "createdAt": "2026-11-21T00:00:00.000Z"
+    }
+  ],
+  "users": [
+    { "email": "demo@pebec.ng", "password": "Demo123", "role": "admin" },
+    { "email": "citizen@test.ng", "password": "Citizen123", "role": "citizen" }
+  ]
+}
