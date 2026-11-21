@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ijudigal Thomas | Full-Stack Developer | PEBEC Applicant</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f4f6f9;color:#1a1a1a}
+header{background:#0a7a42;color:white;padding:40px 20px;text-align:center}
+header h1{font-size:32px;margin-bottom:8px}
+header p{opacity:.9}
+nav{background:white;padding:12px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0}
+nav a{margin:0 12px;color:#0a7a42;text-decoration:none;font-weight:bold}
+.wrap{max-width:900px;margin:20px auto;padding:0 16px}
+.card{background:white;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.card h2{color:#0a7a42;margin-bottom:12px}
+.badge{display:inline-block;background:#e6f4ec;color:#0a7a42;padding:6px 12px;border-radius:20px;font-size:13px;margin:4px 4px 0 0}
+.btn{display:inline-block;background:#0a7a42;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:12px}
+.btn2{background:#1a1a1a}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+footer{text-align:center;padding:20px;color:#666;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Ijudigal Thomas</h1>
+<p>Full-Stack Developer | B.Sc. Cyber Security, NAUB | Bungudu, Zamfara</p>
+<p>Applicant - PEBEC / ReportGov</p>
+</header>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="wrap">
+<div class="card" id="about">
+<h2>About Me</h2>
+<p>I am a Cyber Security graduate from Nigerian Army University Biu (NAUB) and a Full-Stack Developer based in Bungudu, Zamfara State.</p>
+<p style="margin-top:10px">I build secure, fast, and citizen-friendly government portals. My focus is on solving real Nigerian problems - like making it easy for citizens to report issues with MDAs and track them transparently.</p>
+<div style="margin-top:12px">
+<span class="badge">HTML / CSS / JavaScript</span>
+<span class="badge">Node.js + Express</span>
+<span class="badge">MongoDB / Convex</span>
+<span class="badge">Cyber Security</span>
+<span class="badge">XSS / Validation / RBAC</span>
+</div>
+</div>
+
+<div class="card" id="projects">
+<h2>Featured Project - PEBEC ReportGov Sample</h2>
+<p><b>Problem:</b> Citizens struggle to report issues with CAC, NAFDAC, Immigration, etc. and don't get feedback.</p>
+<p style="margin-top:8px"><b>Solution I Built:</b> A full-stack ReportGov sample with 72-hour SLA tracking, citizen report form, tracking ID, admin dashboard, and secure login.</p>
+<p style="margin-top:8px"><b>Stack:</b> Frontend: HTML/CSS/JS on GitHub Pages | Backend: Node.js + Express on Render | DB: JSON (ready for MongoDB/Convex)</p>
+<a class="btn" href="pebec-demo.html">View PEBEC Sample Live →</a>
+<a class="btn btn2" href="https://github.com/ijuthomas123/ijuthomas123.github.io" target="_blank">View Full-Stack Code on GitHub</a>
+<p style="margin-top:12px;font-size:14px;color:#555">Demo Login: <b>demo@pebec.ng / Demo123</b> | Test Tracking: Submit a report to get <b>PEBEC-2026-XXXX</b></p>
+</div>
+
+<div class="grid">
+<div class="card" id="skills">
+<h2>Skills</h2>
+<ul style="line-height:1.8;margin-left:18px">
+<li>Frontend: HTML, CSS, JavaScript, Responsive Design</li>
+<li>Backend: Node.js, Express, REST API</li>
+<li>Database: MongoDB, JSON, Convex</li>
+<li>Security: XSS Prevention, Input Validation, RBAC</li>
+<li>Tools: GitHub, Render, VS Code</li>
+</ul>
+</div>
+<div class="card" id="contact">
+<h2>Contact</h2>
+<p><b>Email:</b> ijuthomas123@gmail.com</p>
+<p style="margin-top:8px"><b>Location:</b> Bungudu, Zamfara State, Nigeria</p>
+<p style="margin-top:8px"><b>GitHub:</b> github.com/ijuthomas123</p>
+<p style="margin-top:8px"><b>Education:</b> B.Sc. Cyber Security - NAUB</p>
+<a class="btn" href="mailto:ijuthomas123@gmail.com">Email Me</a>
+</div>
+</div>
+
+<div class="card">
+<h2>API - Backend Live</h2>
+<p>Backend is in <b>/backend/server.js</b> - Endpoints:</p>
+<p style="margin-top:8px;font-family:monospace;background:#f4f6f9;padding:10px;border-radius:8px">GET /api/health<br>POST /api/reports<br>GET /api/reports<br>POST /api/login<br>GET /api/stats</p>
+</div>
+</div>
+<footer>© 2026 Ijudigal Thomas - Built for PEBEC | Full-Stack Portfolio</footer>
+</body>
+</html>
