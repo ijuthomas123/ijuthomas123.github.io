@@ -9,10 +9,12 @@
 body{font-family:Arial,sans-serif;background:#f0f4f1;color:#222;line-height:1.6}
 .topbar{background:#00643c;color:white;text-align:center;padding:10px;font-size:13px;font-weight:700}
 header{background:white;padding:20px 16px;text-align:center;border-bottom:4px solid #00643c}
-header img{max-width:420px;width:92%;height:auto}
+.logo-wrap{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.logo-badge{width:62px;height:62px;background:#00643c;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;border:3px solid #ffc107;flex-shrink:0}
+header img{max-width:420px;width:92%;height:auto;display:block;margin:0 auto}
 header p{color:#00643c;font-weight:700;font-size:13px;margin-top:8px;line-height:1.5}
 .hero{position:relative}
-.hero img{width:100%;height:320px;object-fit:cover;display:block}
+.hero img{width:100%;height:320px;object-fit:cover;display:block;background:#00643c}
 .hero-text{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(0,100,60,0.92);color:white;padding:16px;border-radius:10px}
 .hero-text h2{font-size:20px}
 .hero-text p{font-size:13px;opacity:0.95;margin-top:4px}
@@ -29,12 +31,12 @@ nav button.active,nav button:hover{background:#0a5c36;color:white}
 .card p{color:#555;font-size:14px;margin-bottom:12px}
 .leader-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
 .leader-card{background:#f8f9fa;border-radius:12px;overflow:hidden;border:1px solid #eee}
-.leader-card img{width:100%;height:180px;object-fit:cover;display:block}
+.leader-card img{width:100%;height:180px;object-fit:cover;display:block;background:#e9ecef}
 .leader-card div{padding:12px}
 .leader-card b{display:block;font-size:15px}
 .leader-card span{font-size:13px;color:#666}
 .gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px}
-.gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px;display:block}
+.gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px;display:block;background:#e9ecef}
 .gallery span{font-size:12px;color:#555;display:block;text-align:center;margin-top:4px}
 label{font-weight:700;font-size:14px;display:block;margin:12px 0 5px}
 input,select,textarea{width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:15px;font-family:inherit}
@@ -61,12 +63,19 @@ footer a{color:#ffc107;text-decoration:none}
 <div class="topbar">SAMPLE REBUILD by Ijudigal Thomas — Not an official PEBEC site — For Job Application Demo Only</div>
 
 <header>
-<img src="https://procurement.benuestate.gov.ng/wp-content/uploads/2026/01/p10.jpg" alt="PEBEC Logo - Presidential Enabling Business Environment Council">
-<p>Presidential Enabling Business Environment Council<br>SAMPLE REBUILD by Ijudigal Thomas - Full-Stack Developer Applicant<br>B.Sc. Cyber Security (NAUB) | Bungudu, Zamfara</p>
+<div class="logo-wrap">
+<div class="logo-badge">PE</div>
+<div style="text-align:left">
+<div style="font-size:28px;font-weight:900;color:#00643c;line-height:1">PEBEC <span style="color:#d4a017">reportgov</span></div>
+<div style="font-size:12px;color:#666;font-weight:700">Presidential Enabling Business Environment Council</div>
+</div>
+</div>
+<img src="https://bizwatchnigeria.ng/wp-content/uploads/2026/04/logo_pebec1-1024x276.png" alt="PEBEC Official Logo" onerror="this.style.display='none'" style="margin-top:12px">
+<p>Presidential Enabling Business Environment Council<br>SAMPLE REBUILD by Ijudigal Thomas - Full-Stack Developer Applicant<br>B.Sc. Cyber Security (NAUB) | Kuje, FCT - Abuja | ijuthomas123@gmail.com | 09030033311</p>
 </header>
 
 <section class="hero">
-<img src="https://accessnews.ng/wp-content/uploads/2024/09/1719662214.jpg" alt="PEBEC Townhall - ReportGov.ng">
+<img src="https://accessnews.ng/wp-content/uploads/2024/09/1719662214.jpg" alt="PEBEC Townhall - ReportGov.ng" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80'">
 <div class="hero-text">
 <h2>Making Business in Nigeria Easy</h2>
 <p>Est. July 2016 | 190+ Reforms | 69 MDAs | ReportGov 72hr Response</p>
@@ -88,17 +97,16 @@ footer a{color:#ffc107;text-decoration:none}
 <div class="stat"><b>48hrs</b><span>Avg. Response</span></div>
 </div>
 
-<!-- TOWNHALL -->
 <div id="townhall" class="card">
 <h2>🏛️ PEBEC Townhall - Leadership</h2>
 <p>Meet the leaders driving Ease of Doing Business in Nigeria.</p>
 <div class="leader-grid">
 <div class="leader-card">
-<img src="https://fmicgovng.s3.amazonaws.com/cityhill/wp-content/uploads/2024/06/PEBEC-TOWN-HALL-MEETING4-696x497.jpg" alt="VP Kashim Shettima - Chair, PEBEC">
+<img src="https://fmicgovng.s3.amazonaws.com/cityhill/wp-content/uploads/2024/06/PEBEC-TOWN-HALL-MEETING4-696x497.jpg" alt="VP Kashim Shettima - Chair, PEBEC" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80'">
 <div><b>Sen. Kashim Shettima, GCON</b><span>Vice President & Chairman, PEBEC</span></div>
 </div>
 <div class="leader-card">
-<img src="https://democracyradio.nilds.co/wp-content/uploads/2026/07/Zahrah-Audu-1200x699-1-1024x596.jpg" alt="Princess Zahrah Mustapha Audu - Director-General, PEBEC">
+<img src="https://democracyradio.nilds.co/wp-content/uploads/2026/07/Zahrah-Audu-1200x699-1-1024x596.jpg" alt="Princess Zahrah Mustapha Audu - Director-General, PEBEC" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80'">
 <div><b>Princess Zahrah Mustapha-Audu</b><span>Director-General, PEBEC</span></div>
 </div>
 </div>
@@ -111,24 +119,23 @@ footer a{color:#ffc107;text-decoration:none}
 <h2 style="margin-top:20px">Where ReportGov Works</h2>
 <p>MSMEs (90%+ of businesses) | Airports - ReportGov Kiosks 24/7 | Ports - Apapa / Tin Can</p>
 <div class="gallery">
-<div><img src="https://nairametrics.com/wp-content/uploads/2019/05/MSME-in-Nigeria.jpg" alt="Nigerian MSMEs - Market Traders"><span>MSMEs - Who We Serve</span></div>
-<div><img src="https://cdn.blackfacts.net/uploads/blackfacts/facts/2022/05/23abb4c322722352d3980a6a5597fa67629383fa90df0ac6757c96abb5389e09.jpg" alt="Murtala Muhammed Airport Lagos"><span>Airport - ReportGov Kiosks</span></div>
-<div><img src="https://www.donclimaxgroup.com/wp-content/uploads/2026/04/apapa-container-terminal2.jpg.jpeg" alt="Apapa Port Lagos"><span>Apapa Port - 21 days → 7 days target</span></div>
+<div><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Nigerian MSMEs - Market Traders" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80'"><span>MSMEs - Who We Serve</span></div>
+<div><img src="https://cdn.blackfacts.net/uploads/blackfacts/facts/2022/05/23abb4c322722352d3980a6a5597fa67629383fa90df0ac6757c96abb5389e09.jpg" alt="Murtala Muhammed Airport Lagos" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80'"><span>Airport - ReportGov Kiosks</span></div>
+<div><img src="https://www.donclimaxgroup.com/wp-content/uploads/2026/04/apapa-container-terminal2.jpg.jpeg" alt="Apapa Port Lagos" onerror="this.src='https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&q=80'"><span>Apapa Port - 21 days → 7 days target</span></div>
 </div>
 <p style="font-size:11px;color:#888;margin-top:10px">Caption: PEBEC Townhall Meeting - ReportGov.ng. Images for demo purposes, credited to original publishers. Not owned by applicant.</p>
 </div>
 
-<!-- REPORT -->
 <div id="report" class="card hidden">
 <h2>📝 Report an Issue</h2>
 <p>Your report goes directly to the MDA. You get a Tracking ID and 72-hour SLA.</p>
 <label>Full Name *</label>
 <input id="rName" placeholder="e.g. Ijudigal Thomas">
 <label>Email / Phone *</label>
-<input id="rContact" placeholder="e.g. you@email.com">
+<input id="rContact" placeholder="e.g. ijuthomas123@gmail.com">
 <label>State</label>
 <select id="rState">
-<option>Zamfara</option><option>Lagos</option><option>Abuja FCT</option><option>Kano</option><option>Kaduna</option><option>Rivers</option><option>Oyo</option><option>Other</option>
+<option>Abuja FCT</option><option>Lagos</option><option>Kano</option><option>Kaduna</option><option>Rivers</option><option>Oyo</option><option>Other</option>
 </select>
 <label>Select MDA *</label>
 <select id="rMda">
@@ -156,7 +163,6 @@ footer a{color:#ffc107;text-decoration:none}
 <p style="font-size:12px;margin-top:10px;color:#888">🔒 Protected: Input validated & sanitized against XSS. Demo by Ijudigal Thomas.</p>
 </div>
 
-<!-- TRACK -->
 <div id="track" class="card hidden">
 <h2>🔍 Track Your Report</h2>
 <p>Enter your Tracking ID to see status.</p>
@@ -167,7 +173,6 @@ footer a{color:#ffc107;text-decoration:none}
 <p style="font-size:13px;margin-top:10px">Try demo ID: <b>PEBEC-2026-1001</b></p>
 </div>
 
-<!-- LEADERBOARD -->
 <div id="leaderboard" class="card hidden">
 <h2>🏆 MDA Leaderboard</h2>
 <p>Ranked by resolution rate & response time.</p>
@@ -178,7 +183,6 @@ footer a{color:#ffc107;text-decoration:none}
 <div class="mda-row"><span><b>5. NAFDAC</b><br><small>Food & Drug Agency</small></span><span class="pill red">65% Resolved</span></div>
 </div>
 
-<!-- LOGIN -->
 <div id="login" class="card hidden">
 <h2>🔐 Staff Login</h2>
 <p>Role-Based Access: Admin, MDA Officer, Citizen.</p>
@@ -191,11 +195,16 @@ footer a{color:#ffc107;text-decoration:none}
 <p style="font-size:13px;margin-top:10px">Demo: <b>demo@pebec.ng / Demo123</b> (Admin)<br>Citizen: <b>citizen@test.ng / Citizen123</b></p>
 </div>
 
+<div class="card">
+<h2>📍 About The Developer</h2>
+<p><b>Ijudigal Thomas</b><br>B.Sc. Cyber Security (NAUB)<br>Full-Stack Developer<br>Kuje, FCT - Abuja<br>ijuthomas123@gmail.com | 09030033311<br>Available for on-site role in Abuja</p>
+</div>
+
 </div>
 
 <footer>
 <b>PEBEC ReportGov - Sample Rebuild</b><br>
-Built by <a href="https://ijuthomas123.github.io/">Ijudigal Thomas</a> | B.Sc. Cyber Security, NAUB<br>
+Built by <a href="https://ijuthomas123.github.io/">Ijudigal Thomas</a> | B.Sc. Cyber Security, NAUB | Kuje, FCT - Abuja<br>
 <a href="https://github.com/ijuthomas123/ijuthomas123.github.io">View Full Source Code on GitHub</a><br>
 <small>Images for demo purposes, credited to original publishers. Not owned by applicant. Not an official PEBEC site.</small>
 </footer>
@@ -235,20 +244,4 @@ document.addEventListener('DOMContentLoaded', function(){
     var lastId = '';
     try{ lastId = localStorage.getItem('lastId') || ''; }catch(e){}
     if(tid==='PEBEC-2026-1001' || (tid && tid===lastId)){
-      el.innerHTML='<b>📦 Report Found</b><br>ID: '+tid+'<br>Status: <b>In Progress</b><br>MDA: CAC<br>SLA: 72 Hours - 24hrs remaining';
-    } else if(!tid){ el.innerHTML='Please enter a Tracking ID'; }
-    else { el.innerHTML='<b>Report:</b> '+tid+'<br>Status: <b>Received</b> - Assigned to MDA. Check back in 24hrs.'; }
-  });
-  document.getElementById('loginBtn').addEventListener('click', function(){
-    var e = document.getElementById('lEmail').value.trim();
-    var p = document.getElementById('lPass').value.trim();
-    var el = document.getElementById('loginResult');
-    el.style.display='block';
-    if(e==='demo@pebec.ng' && p==='Demo123'){ el.innerHTML='<b>✅ Welcome Admin!</b><br>Role: Admin - Full Access to all MDAs, Reports & Analytics.'; }
-    else if(e==='citizen@test.ng' && p==='Citizen123'){ el.innerHTML='<b>✅ Welcome Citizen!</b><br>Role: Citizen - View & Track your reports only.'; }
-    else { el.innerHTML='❌ Invalid login. Use demo: demo@pebec.ng / Demo123'; }
-  });
-});
-</script>
-</body>
-</html>
+      el.innerHTML='<b>📦 Report Found</b><br>ID: '+tid+'<br>Status: <b
