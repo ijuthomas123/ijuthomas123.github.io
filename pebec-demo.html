@@ -44,7 +44,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:#0a5c36}
 .red{background:#f8d7da;color:#721c24}
 footer{background:#222;color:white;text-align:center;padding:20px 16px;font-size:13px;margin-top:20px}
 footer a{color:#ffc107;text-decoration:none}
-.hidden{display:none}
+.hidden{display:none!important}
 @media(max-width:600px){.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}}
 </style>
 </head>
@@ -58,12 +58,12 @@ footer a{color:#ffc107;text-decoration:none}
 <p style="margin-top:10px;font-size:13px">B.Sc. Cyber Security (NAUB) | Full-Stack Developer | Bungudu, Zamfara</p>
 </header>
 
-<nav>
-<button onclick="show('townhall',this)" class="active">Townhall</button>
-<button onclick="show('report',this)">Report Issue</button>
-<button onclick="show('track',this)">Track Report</button>
-<button onclick="show('leaderboard',this)">Leaderboard</button>
-<button onclick="show('login',this)">Staff Login</button>
+<nav id="mainNav">
+<button data-tab="townhall" class="active">Townhall</button>
+<button data-tab="report">Report Issue</button>
+<button data-tab="track">Track Report</button>
+<button data-tab="leaderboard">Leaderboard</button>
+<button data-tab="login">Staff Login</button>
 </nav>
 
 <div class="container">
@@ -73,7 +73,6 @@ footer a{color:#ffc107;text-decoration:none}
 <div class="stat"><b>48hrs</b><span>Avg. Response</span></div>
 </div>
 
-<!-- TOWNHALL -->
 <div id="townhall" class="card">
 <h2>🏛️ PEBEC Townhall - Leadership</h2>
 <p>Meet the leaders driving Ease of Doing Business in Nigeria.</p>
@@ -86,4 +85,142 @@ footer a{color:#ffc107;text-decoration:none}
 <div><b>Princess Zahrah Mustapha-Audu</b><span>Director-General, PEBEC</span></div>
 </div>
 <div style="background:#fff8e1;padding:14px;border-radius:10px;margin-top:12px">
-<b>📢 Next Townhall: Ease
+<b>📢 Next Townhall: Ease of Doing Business Forum</b><br>
+<span style="font-size:13px;color:#666">Join MDAs, businesses and citizens to discuss reforms, 72-hour SLA and service delivery.</span><br>
+<button class="btn btn-gold" onclick="alert('Townhall registration - Demo by Ijudigal Thomas. You will be notified!')">Register for Townhall</button>
+</div>
+</div>
+
+<div id="report" class="card hidden">
+<h2>📝 Report an Issue</h2>
+<p>Your report goes directly to the MDA. You get a Tracking ID and 72-hour SLA.</p>
+<label>Full Name *</label>
+<input id="rName" placeholder="e.g. Ijudigal Thomas">
+<label>Email / Phone *</label>
+<input id="rContact" placeholder="e.g. you@email.com">
+<label>State</label>
+<select id="rState">
+<option>Zamfara</option><option>Lagos</option><option>Abuja FCT</option><option>Kano</option><option>Kaduna</option><option>Rivers</option><option>Oyo</option><option>Other</option>
+</select>
+<label>Select MDA *</label>
+<select id="rMda">
+<option>CAC - Corporate Affairs Commission</option>
+<option>FIRS - Federal Inland Revenue Service</option>
+<option>NITDA - National IT Development Agency</option>
+<option>SON - Standards Organisation of Nigeria</option>
+<option>NAFDAC</option>
+<option>Nigeria Customs Service</option>
+<option>Other MDA</option>
+</select>
+<label>Issue Type *</label>
+<select id="rType">
+<option>Delay in Service</option>
+<option>Request for Bribe / Extortion</option>
+<option>Poor Customer Service</option>
+<option>Website / Portal Down</option>
+<option>Unclear Requirements</option>
+<option>Other</option>
+</select>
+<label>Describe Your Issue *</label>
+<textarea id="rIssue" rows="4" placeholder="Describe what happened, when, and where..."></textarea>
+<button class="btn" id="submitBtn">SUBMIT REPORT →</button>
+<div id="reportResult" class="success"></div>
+<p style="font-size:12px;margin-top:10px;color:#888">🔒 Protected: Input validated & sanitized against XSS. Demo by Ijudigal Thomas.</p>
+</div>
+
+<div id="track" class="card hidden">
+<h2>🔍 Track Your Report</h2>
+<p>Enter your Tracking ID to see status.</p>
+<label>Tracking ID</label>
+<input id="trackId" placeholder="e.g. PEBEC-2026-1234">
+<button class="btn" id="trackBtn">TRACK REPORT</button>
+<div id="trackResult" class="success"></div>
+<p style="font-size:13px;margin-top:10px">Try demo ID: <b>PEBEC-2026-1001</b></p>
+</div>
+
+<div id="leaderboard" class="card hidden">
+<h2>🏆 MDA Leaderboard</h2>
+<p>Ranked by resolution rate & response time.</p>
+<div class="mda-row"><span><b>1. CAC</b><br><small>Corporate Affairs Commission</small></span><span class="pill green">94% Resolved</span></div>
+<div class="mda-row"><span><b>2. FIRS</b><br><small>Federal Inland Revenue</small></span><span class="pill green">91% Resolved</span></div>
+<div class="mda-row"><span><b>3. NITDA</b><br><small>IT Development Agency</small></span><span class="pill yellow">84% Resolved</span></div>
+<div class="mda-row"><span><b>4. SON</b><br><small>Standards Organisation</small></span><span class="pill yellow">78% Resolved</span></div>
+<div class="mda-row"><span><b>5. NAFDAC</b><br><small>Food & Drug Agency</small></span><span class="pill red">65% Resolved</span></div>
+</div>
+
+<div id="login" class="card hidden">
+<h2>🔐 Staff Login</h2>
+<p>Role-Based Access: Admin, MDA Officer, Citizen.</p>
+<label>Email</label>
+<input id="lEmail" placeholder="demo@pebec.ng">
+<label>Password</label>
+<input id="lPass" type="password" placeholder="Demo123">
+<button class="btn" id="loginBtn">LOGIN</button>
+<div id="loginResult" class="success"></div>
+<p style="font-size:13px;margin-top:10px">Demo: <b>demo@pebec.ng / Demo123</b> (Admin)<br>Citizen: <b>citizen@test.ng / Citizen123</b></p>
+</div>
+
+</div>
+
+<footer>
+<b>PEBEC ReportGov - Sample Rebuild</b><br>
+Built by <a href="https://ijuthomas123.github.io/">Ijudigal Thomas</a> | B.Sc. Cyber Security, NAUB<br>
+<a href="https://github.com/ijuthomas123/ijuthomas123.github.io">View Full Source Code on GitHub</a>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var tabs = ['townhall','report','track','leaderboard','login'];
+  var navBtns = document.querySelectorAll('#mainNav button');
+  navBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-tab');
+      tabs.forEach(function(t){
+        var el = document.getElementById(t);
+        if(el){ if(t===target){ el.classList.remove('hidden'); } else { el.classList.add('hidden'); } }
+      });
+      navBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      window.scrollTo(0,0);
+    });
+  });
+
+  function sanitize(s){ return s.replace(/</g,'&lt;').replace(/>/g,'&gt;').trim(); }
+
+  document.getElementById('submitBtn').addEventListener('click', function(){
+    var name = sanitize(document.getElementById('rName').value);
+    var contact = sanitize(document.getElementById('rContact').value);
+    var issue = sanitize(document.getElementById('rIssue').value);
+    if(!name||!contact||!issue){ alert('Please fill Name, Contact and Issue'); return; }
+    var id = 'PEBEC-2026-' + Math.floor(1000+Math.random()*9000);
+    var el = document.getElementById('reportResult');
+    el.style.display='block';
+    el.innerHTML='<b>✅ Report Submitted!</b><br>Tracking ID: <b>'+id+'</b><br>Name: '+name+'<br>MDA: '+document.getElementById('rMda').value+'<br>Status: <b>Received</b> - SLA: 72 Hours<br><br>Save this ID to track your report.';
+    try{ localStorage.setItem('lastId', id); }catch(e){}
+  });
+
+  document.getElementById('trackBtn').addEventListener('click', function(){
+    var tid = document.getElementById('trackId').value.trim().toUpperCase();
+    var el = document.getElementById('trackResult');
+    el.style.display='block';
+    var lastId = '';
+    try{ lastId = localStorage.getItem('lastId') || ''; }catch(e){}
+    if(tid==='PEBEC-2026-1001' || (tid && tid===lastId)){
+      el.innerHTML='<b>📦 Report Found</b><br>ID: '+tid+'<br>Status: <b>In Progress</b><br>MDA: CAC<br>SLA: 72 Hours - 24hrs remaining';
+    } else if(!tid){ el.innerHTML='Please enter a Tracking ID'; }
+    else { el.innerHTML='<b>Report:</b> '+tid+'<br>Status: <b>Received</b> - Assigned to MDA. Check back in 24hrs.'; }
+  });
+
+  document.getElementById('loginBtn').addEventListener('click', function(){
+    var e = document.getElementById('lEmail').value.trim();
+    var p = document.getElementById('lPass').value.trim();
+    var el = document.getElementById('loginResult');
+    el.style.display='block';
+    if(e==='demo@pebec.ng' && p==='Demo123'){ el.innerHTML='<b>✅ Welcome Admin!</b><br>Role: Admin - Full Access to all MDAs, Reports & Analytics.'; }
+    else if(e==='citizen@test.ng' && p==='Citizen123'){ el.innerHTML='<b>✅ Welcome Citizen!</b><br>Role: Citizen - View & Track your reports only.'; }
+    else { el.innerHTML='❌ Invalid login. Use demo: demo@pebec.ng / Demo123'; }
+  });
+});
+</script>
+</body>
+</html>
