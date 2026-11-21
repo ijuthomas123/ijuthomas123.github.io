@@ -6,74 +6,80 @@
 <title>PEBEC ReportGov - Sample Rebuild by Ijudigal Thomas</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
 body{font-family:Arial,sans-serif;background:#f0f4f1;color:#222;line-height:1.6}
-.topbar{background:#00643c;color:white;text-align:center;padding:10px;font-size:13px;font-weight:700}
-header{background:white;padding:20px 16px;text-align:center;border-bottom:4px solid #00643c}
-.logo-wrap{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.logo-badge{width:62px;height:62px;background:#00643c;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;border:3px solid #ffc107;flex-shrink:0}
-header img{max-width:420px;width:92%;height:auto;display:block;margin:0 auto}
-header p{color:#00643c;font-weight:700;font-size:13px;margin-top:8px;line-height:1.5}
-.hero{position:relative}
-.hero img{width:100%;height:320px;object-fit:cover;display:block;background:#00643c}
-.hero-text{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(0,100,60,0.92);color:white;padding:16px;border-radius:10px}
-.hero-text h2{font-size:20px}
-.hero-text p{font-size:13px;opacity:0.95;margin-top:4px}
-nav{background:white;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px;position:sticky;top:0;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:10}
-nav button{border:2px solid #0a5c36;background:white;color:#0a5c36;padding:8px 14px;border-radius:20px;font-weight:700;cursor:pointer}
+a{word-break:break-word;overflow-wrap:break-word}
+.topbar{background:#00643c;color:white;text-align:center;padding:10px 8px;font-size:12px;font-weight:700;line-height:1.4}
+header{background:white;padding:20px 12px;text-align:center;border-bottom:4px solid #00643c}
+.logo-wrap{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.logo-badge{width:56px;height:56px;background:#00643c;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;border:3px solid #ffc107;flex-shrink:0}
+header img{max-width:100%;width:92%;height:auto;display:block;margin:0 auto}
+header p{color:#00643c;font-weight:700;font-size:12px;margin-top:8px;line-height:1.5;word-wrap:break-word}
+header p a{color:#00643c}
+.hero{position:relative;overflow:hidden}
+.hero img{width:100%;height:280px;object-fit:cover;object-position:center;display:block;background:#00643c}
+.hero-text{position:absolute;bottom:12px;left:10px;right:10px;background:rgba(0,100,60,0.92);color:white;padding:14px 12px;border-radius:10px;max-width:calc(100% - 20px)}
+.hero-text h2{font-size:19px;line-height:1.2;word-wrap:break-word}
+.hero-text p{font-size:12px;opacity:0.95;margin-top:4px;line-height:1.4;word-wrap:break-word}
+/* NAV - LINKS RESPONSIVE - SWIPEABLE */
+nav{background:white;display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:6px;padding:10px 8px;position:sticky;top:0;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:10;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{border:2px solid #0a5c36;background:white;color:#0a5c36;padding:9px 14px;border-radius:20px;font-weight:700;cursor:pointer;font-size:13px;white-space:nowrap;flex-shrink:0;min-width:95px}
 nav button.active,nav button:hover{background:#0a5c36;color:white}
-.container{max-width:900px;margin:0 auto;padding:16px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
-.stat{background:white;padding:18px 10px;border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-.stat b{font-size:26px;color:#0a5c36;display:block}
-.stat span{font-size:12px;color:#666}
-.card{background:white;padding:20px;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:16px}
-.card h2{color:#0a5c36;margin-bottom:6px;font-size:20px}
-.card p{color:#555;font-size:14px;margin-bottom:12px}
-.leader-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
-.leader-card{background:#f8f9fa;border-radius:12px;overflow:hidden;border:1px solid #eee}
-.leader-card img{width:100%;height:180px;object-fit:cover;display:block;background:#e9ecef}
-.leader-card div{padding:12px}
-.leader-card b{display:block;font-size:15px}
-.leader-card span{font-size:13px;color:#666}
-.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px}
-.gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px;display:block;background:#e9ecef}
-.gallery span{font-size:12px;color:#555;display:block;text-align:center;margin-top:4px}
+.container{max-width:900px;margin:0 auto;padding:14px 12px;width:100%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.stat{background:white;padding:16px 8px;border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);min-width:0}
+.stat b{font-size:24px;color:#0a5c36;display:block}
+.stat span{font-size:11px;color:#666}
+.card{background:white;padding:18px 14px;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:14px;width:100%;overflow:hidden}
+.card h2{color:#0a5c36;margin-bottom:6px;font-size:19px;line-height:1.3}
+.card p{color:#555;font-size:14px;margin-bottom:12px;word-wrap:break-word}
+.card a{color:#0a5c36;font-weight:700}
+.leader-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.leader-card{background:#f8f9fa;border-radius:12px;overflow:hidden;border:1px solid #eee;min-width:0}
+.leader-card img{width:100%;height:170px;object-fit:cover;display:block;background:#e9ecef}
+.leader-card div{padding:10px}
+.leader-card b{display:block;font-size:14px;line-height:1.3}
+.leader-card span{font-size:12px;color:#666}
+.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.gallery img{width:100%;height:100px;object-fit:cover;border-radius:10px;display:block;background:#e9ecef}
+.gallery span{font-size:11px;color:#555;display:block;text-align:center;margin-top:4px;line-height:1.3}
 label{font-weight:700;font-size:14px;display:block;margin:12px 0 5px}
-input,select,textarea{width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:15px;font-family:inherit}
+input,select,textarea{width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:15px;font-family:inherit;max-width:100%}
 input:focus,select:focus,textarea:focus{outline:none;border-color:#0a5c36}
 .btn{background:#0a5c36;color:white;border:none;padding:14px;width:100%;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;margin-top:14px}
 .btn:hover{background:#084a2b}
 .btn-gold{background:#ffc107;color:#222}
-.success{background:#d4edda;border:2px solid #0a5c36;padding:16px;border-radius:10px;display:none;margin-top:14px}
-.success b{color:#0a5c36;font-size:18px}
-.mda-row{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eee}
+.success{background:#d4edda;border:2px solid #0a5c36;padding:14px;border-radius:10px;display:none;margin-top:14px;word-wrap:break-word}
+.success b{color:#0a5c36;font-size:16px}
+.mda-row{display:flex;justify-content:space-between;align-items:center;padding:12px 8px;border-bottom:1px solid #eee;gap:8px}
 .mda-row:last-child{border:none}
-.pill{padding:4px 10px;border-radius:20px;font-size:12px;font-weight:800;white-space:nowrap}
+.pill{padding:4px 8px;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap;flex-shrink:0}
 .green{background:#d4edda;color:#0a5c36}
 .yellow{background:#fff3cd;color:#856404}
 .red{background:#f8d7da;color:#721c24}
-footer{background:#222;color:white;text-align:center;padding:20px 16px;font-size:12px;margin-top:20px;line-height:1.6}
-footer a{color:#ffc107;text-decoration:none}
+footer{background:#222;color:white;text-align:center;padding:20px 12px;font-size:12px;margin-top:20px;line-height:1.7;word-wrap:break-word}
+footer a{color:#ffc107;text-decoration:none;display:inline-block;max-width:100%;word-break:break-all;overflow-wrap:break-word;padding:2px 0}
+.footer-links{display:flex;flex-direction:column;gap:6px;align-items:center;margin:8px 0}
+.footer-links a{background:#333;padding:8px 16px;border-radius:20px;width:100%;max-width:320px;text-align:center}
 .hidden{display:none!important}
-@media(max-width:600px){.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}.leader-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery img{height:160px}.hero img{height:240px}}
+@media(max-width:600px){.stats{grid-template-columns:repeat(3,1fr);gap:6px}.stat b{font-size:20px}.stat span{font-size:10px}.leader-grid{grid-template-columns:1fr 1fr;gap:8px}.leader-card img{height:130px}.gallery{grid-template-columns:1fr 1fr 1fr;gap:6px}.gallery img{height:80px}.hero img{height:220px}.hero-text{bottom:10px;padding:12px 10px}.hero-text h2{font-size:17px}.hero-text p{font-size:11px}.card{padding:16px 12px}}
+@media(max-width:380px){.leader-grid{grid-template-columns:1fr}.leader-card img{height:180px}.gallery{grid-template-columns:1fr}.gallery img{height:150px}.hero-text h2{font-size:16px}}
 </style>
 </head>
 <body>
-
 <div class="topbar">SAMPLE REBUILD by Ijudigal Thomas — Not an official PEBEC site — For Job Application Demo Only</div>
-
 <header>
 <div class="logo-wrap">
 <div class="logo-badge">PE</div>
 <div style="text-align:left">
-<div style="font-size:28px;font-weight:900;color:#00643c;line-height:1">PEBEC <span style="color:#d4a017">reportgov</span></div>
-<div style="font-size:12px;color:#666;font-weight:700">Presidential Enabling Business Environment Council</div>
+<div style="font-size:26px;font-weight:900;color:#00643c;line-height:1">PEBEC <span style="color:#d4a017">reportgov</span></div>
+<div style="font-size:11px;color:#666;font-weight:700">Presidential Enabling Business Environment Council</div>
 </div>
 </div>
 <img src="https://bizwatchnigeria.ng/wp-content/uploads/2026/04/logo_pebec1-1024x276.png" alt="PEBEC Official Logo" onerror="this.style.display='none'" style="margin-top:12px">
-<p>Presidential Enabling Business Environment Council<br>SAMPLE REBUILD by Ijudigal Thomas - Full-Stack Developer Applicant<br>B.Sc. Cyber Security (NAUB) | Kuje, FCT - Abuja | ijuthomas123@gmail.com | 09030033311</p>
+<p>Presidential Enabling Business Environment Council<br>SAMPLE REBUILD by Ijudigal Thomas - Full-Stack Developer Applicant<br>B.Sc. Cyber Security (NAUB) | Kuje, FCT - Abuja<br><a href="mailto:ijuthomas123@gmail.com">ijuthomas123@gmail.com</a> | <a href="tel:09030033311">09030033311</a></p>
 </header>
-
 <section class="hero">
 <img src="https://accessnews.ng/wp-content/uploads/2024/09/1719662214.jpg" alt="PEBEC Townhall - ReportGov.ng" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80'">
 <div class="hero-text">
@@ -81,7 +87,6 @@ footer a{color:#ffc107;text-decoration:none}
 <p>Est. July 2016 | 190+ Reforms | 69 MDAs | ReportGov 72hr Response</p>
 </div>
 </section>
-
 <nav id="mainNav">
 <button data-tab="townhall" class="active">Townhall</button>
 <button data-tab="report">Report Issue</button>
@@ -89,14 +94,12 @@ footer a{color:#ffc107;text-decoration:none}
 <button data-tab="leaderboard">Leaderboard</button>
 <button data-tab="login">Staff Login</button>
 </nav>
-
 <div class="container">
 <div class="stats">
 <div class="stat"><b>69</b><span>MDAs Covered</span></div>
 <div class="stat"><b>1,240</b><span>Reports Resolved</span></div>
 <div class="stat"><b>48hrs</b><span>Avg. Response</span></div>
 </div>
-
 <div id="townhall" class="card">
 <h2>🏛️ PEBEC Townhall - Leadership</h2>
 <p>Meet the leaders driving Ease of Doing Business in Nigeria.</p>
@@ -115,7 +118,6 @@ footer a{color:#ffc107;text-decoration:none}
 <span style="font-size:13px;color:#666">Join MDAs, businesses and citizens to discuss reforms, 72-hour SLA and service delivery.</span><br>
 <button class="btn btn-gold" onclick="alert('Townhall registration - Demo by Ijudigal Thomas. You will be notified!')">Register for Townhall</button>
 </div>
-
 <h2 style="margin-top:20px">Where ReportGov Works</h2>
 <p>MSMEs (90%+ of businesses) | Airports - ReportGov Kiosks 24/7 | Ports - Apapa / Tin Can</p>
 <div class="gallery">
@@ -125,7 +127,6 @@ footer a{color:#ffc107;text-decoration:none}
 </div>
 <p style="font-size:11px;color:#888;margin-top:10px">Caption: PEBEC Townhall Meeting - ReportGov.ng. Images for demo purposes, credited to original publishers. Not owned by applicant.</p>
 </div>
-
 <div id="report" class="card hidden">
 <h2>📝 Report an Issue</h2>
 <p>Your report goes directly to the MDA. You get a Tracking ID and 72-hour SLA.</p>
@@ -134,35 +135,17 @@ footer a{color:#ffc107;text-decoration:none}
 <label>Email / Phone *</label>
 <input id="rContact" placeholder="e.g. ijuthomas123@gmail.com">
 <label>State</label>
-<select id="rState">
-<option>Abuja FCT</option><option>Lagos</option><option>Kano</option><option>Kaduna</option><option>Rivers</option><option>Oyo</option><option>Other</option>
-</select>
+<select id="rState"><option>Abuja FCT</option><option>Lagos</option><option>Kano</option><option>Kaduna</option><option>Rivers</option><option>Oyo</option><option>Other</option></select>
 <label>Select MDA *</label>
-<select id="rMda">
-<option>CAC - Corporate Affairs Commission</option>
-<option>FIRS - Federal Inland Revenue Service</option>
-<option>NITDA - National IT Development Agency</option>
-<option>SON - Standards Organisation of Nigeria</option>
-<option>NAFDAC</option>
-<option>Nigeria Customs Service</option>
-<option>Other MDA</option>
-</select>
+<select id="rMda"><option>CAC - Corporate Affairs Commission</option><option>FIRS - Federal Inland Revenue Service</option><option>NITDA - National IT Development Agency</option><option>SON - Standards Organisation of Nigeria</option><option>NAFDAC</option><option>Nigeria Customs Service</option><option>Other MDA</option></select>
 <label>Issue Type *</label>
-<select id="rType">
-<option>Delay in Service</option>
-<option>Request for Bribe / Extortion</option>
-<option>Poor Customer Service</option>
-<option>Website / Portal Down</option>
-<option>Unclear Requirements</option>
-<option>Other</option>
-</select>
+<select id="rType"><option>Delay in Service</option><option>Request for Bribe / Extortion</option><option>Poor Customer Service</option><option>Website / Portal Down</option><option>Unclear Requirements</option><option>Other</option></select>
 <label>Describe Your Issue *</label>
 <textarea id="rIssue" rows="4" placeholder="Describe what happened, when, and where..."></textarea>
 <button class="btn" id="submitBtn">SUBMIT REPORT →</button>
 <div id="reportResult" class="success"></div>
 <p style="font-size:12px;margin-top:10px;color:#888">🔒 Protected: Input validated & sanitized against XSS. Demo by Ijudigal Thomas.</p>
 </div>
-
 <div id="track" class="card hidden">
 <h2>🔍 Track Your Report</h2>
 <p>Enter your Tracking ID to see status.</p>
@@ -172,7 +155,6 @@ footer a{color:#ffc107;text-decoration:none}
 <div id="trackResult" class="success"></div>
 <p style="font-size:13px;margin-top:10px">Try demo ID: <b>PEBEC-2026-1001</b></p>
 </div>
-
 <div id="leaderboard" class="card hidden">
 <h2>🏆 MDA Leaderboard</h2>
 <p>Ranked by resolution rate & response time.</p>
@@ -182,7 +164,6 @@ footer a{color:#ffc107;text-decoration:none}
 <div class="mda-row"><span><b>4. SON</b><br><small>Standards Organisation</small></span><span class="pill yellow">78% Resolved</span></div>
 <div class="mda-row"><span><b>5. NAFDAC</b><br><small>Food & Drug Agency</small></span><span class="pill red">65% Resolved</span></div>
 </div>
-
 <div id="login" class="card hidden">
 <h2>🔐 Staff Login</h2>
 <p>Role-Based Access: Admin, MDA Officer, Citizen.</p>
@@ -194,21 +175,26 @@ footer a{color:#ffc107;text-decoration:none}
 <div id="loginResult" class="success"></div>
 <p style="font-size:13px;margin-top:10px">Demo: <b>demo@pebec.ng / Demo123</b> (Admin)<br>Citizen: <b>citizen@test.ng / Citizen123</b></p>
 </div>
-
 <div class="card">
 <h2>📍 About The Developer</h2>
-<p><b>Ijudigal Thomas</b><br>B.Sc. Cyber Security (NAUB)<br>Full-Stack Developer<br>Kuje, FCT - Abuja<br>ijuthomas123@gmail.com | 09030033311<br>Available for on-site role in Abuja</p>
+<p><b>Ijudigal Thomas</b><br>B.Sc. Cyber Security (NAUB)<br>Full-Stack Developer<br>Kuje, FCT - Abuja</p>
+<div class="footer-links">
+<a href="mailto:ijuthomas123@gmail.com">📧 ijuthomas123@gmail.com</a>
+<a href="tel:09030033311">📞 09030033311</a>
+<a href="https://ijuthomas123.github.io/">🌐 My Portfolio</a>
 </div>
-
+<p style="font-size:13px">Available for on-site role in Abuja</p>
 </div>
-
+</div>
 <footer>
 <b>PEBEC ReportGov - Sample Rebuild</b><br>
-Built by <a href="https://ijuthomas123.github.io/">Ijudigal Thomas</a> | B.Sc. Cyber Security, NAUB | Kuje, FCT - Abuja<br>
-<a href="https://github.com/ijuthomas123/ijuthomas123.github.io">View Full Source Code on GitHub</a><br>
+Built by Ijudigal Thomas | B.Sc. Cyber Security, NAUB | Kuje, FCT - Abuja
+<div class="footer-links">
+<a href="https://ijuthomas123.github.io/">View My Portfolio</a>
+<a href="https://github.com/ijuthomas123/ijuthomas123.github.io">View Source Code on GitHub</a>
+</div>
 <small>Images for demo purposes, credited to original publishers. Not owned by applicant. Not an official PEBEC site.</small>
 </footer>
-
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var tabs = ['townhall','report','track','leaderboard','login'];
@@ -222,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function(){
       });
       navBtns.forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
+      btn.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
       window.scrollTo(0,0);
     });
   });
@@ -244,4 +231,20 @@ document.addEventListener('DOMContentLoaded', function(){
     var lastId = '';
     try{ lastId = localStorage.getItem('lastId') || ''; }catch(e){}
     if(tid==='PEBEC-2026-1001' || (tid && tid===lastId)){
-      el.innerHTML='<b>📦 Report Found</b><br>ID: '+tid+'<br>Status: <b
+      el.innerHTML='<b>📦 Report Found</b><br>ID: '+tid+'<br>Status: <b>In Progress</b><br>MDA: CAC<br>SLA: 72 Hours - 24hrs remaining';
+    } else if(!tid){ el.innerHTML='Please enter a Tracking ID'; }
+    else { el.innerHTML='<b>Report:</b> '+tid+'<br>Status: <b>Received</b> - Assigned to MDA. Check back in 24hrs.'; }
+  });
+  document.getElementById('loginBtn').addEventListener('click', function(){
+    var e = document.getElementById('lEmail').value.trim();
+    var p = document.getElementById('lPass').value.trim();
+    var el = document.getElementById('loginResult');
+    el.style.display='block';
+    if(e==='demo@pebec.ng' && p==='Demo123'){ el.innerHTML='<b>✅ Welcome Admin!</b><br>Role: Admin - Full Access to all MDAs, Reports & Analytics.'; }
+    else if(e==='citizen@test.ng' && p==='Citizen123'){ el.innerHTML='<b>✅ Welcome Citizen!</b><br>Role: Citizen - View & Track your reports only.'; }
+    else { el.innerHTML='❌ Invalid login. Use demo: demo@pebec.ng / Demo123'; }
+  });
+});
+</script>
+</body>
+</html>
