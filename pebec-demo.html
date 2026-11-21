@@ -5,161 +5,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PEBEC ReportGov - Sample Rebuild by Ijudigal Thomas</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f4f6f9;color:#1a1a1a}
-.topbar{background:#0a7a42;color:white;padding:10px 16px;display:flex;justify-content:space-between;font-size:13px}
-.hero{background:linear-gradient(135deg,#0a7a42,#063d21);color:white;padding:36px 16px;text-align:center}
-.hero h1{font-size:32px;margin:8px 0}
-.hero p{opacity:.9;max-width:700px;margin:0 auto}
-.logo{width:70px;height:70px;background:white;color:#0a7a42;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;margin:0 auto}
-nav{background:white;padding:12px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:10}
-nav a{margin:0 10px;color:#0a7a42;text-decoration:none;font-weight:bold;font-size:14px}
-.wrap{max-width:1000px;margin:20px auto;padding:0 16px}
-.card{background:white;border-radius:12px;padding:22px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.card h2{color:#0a7a42;margin-bottom:12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:650px){.grid{grid-template-columns:1fr}}
-.stat{background:#e6f4ec;border-radius:10px;padding:16px;text-align:center}
-.stat b{font-size:28px;color:#0a7a42;display:block}
-input,select,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:15px}
-button{background:#0a7a42;color:white;border:none;padding:13px 20px;border-radius:8px;font-weight:bold;cursor:pointer;width:100%;font-size:16px}
-button:hover{background:#063d21}
-.leader{display:flex;gap:14px;align-items:center;background:#f9f9f9;padding:14px;border-radius:10px;margin-bottom:12px}
-.avatar{width:60px;height:60px;border-radius:50%;background:#0a7a42;color:white;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;flex-shrink:0}
-.badge{display:inline-block;background:#e6f4ec;color:#0a7a42;padding:5px 10px;border-radius:20px;font-size:12px;margin:3px}
-.success{background:#e6f4ec;border:1px solid #0a7a42;padding:14px;border-radius:8px;display:none;margin-top:12px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}
-th{background:#0a7a42;color:white}
-footer{background:#1a1a1a;color:white;text-align:center;padding:24px;font-size:13px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f0f4f1;color:#222;line-height:1.6}
+header{background:linear-gradient(135deg,#0a5c36,#0d7a47);color:white;padding:28px 16px;text-align:center}
+.logo{width:90px;height:90px;background:linear-gradient(135deg,#ffffff,#d4edda);color:#0a5c36;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;margin:0 auto 14px;border:4px solid #ffc107;box-shadow:0 8px 20px rgba(0,0,0,0.3)}
+header h1{font-size:24px;line-height:1.2}
+header p{opacity:0.9;font-size:14px;margin-top:6px}
+.badge{display:inline-block;background:#ffc107;color:#222;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:800;margin-top:10px}
+nav{background:white;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px;position:sticky;top:0;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:10}
+nav button{border:2px solid #0a5c36;background:white;color:#0a5c36;padding:8px 14px;border-radius:20px;font-weight:700;cursor:pointer}
+nav button.active,nav button:hover{background:#0a5c36;color:white}
+.container{max-width:900px;margin:0 auto;padding:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.stat{background:white;padding:18px 10px;border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.stat b{font-size:26px;color:#0a5c36;display:block}
+.stat span{font-size:12px;color:#666}
+.card{background:white;padding:20px;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:16px}
+.card h2{color:#0a5c36;margin-bottom:6px;font-size:20px}
+.card p{color:#555;font-size:14px;margin-bottom:12px}
+.leader{display:flex;gap:12px;align-items:center;background:#f8f9fa;padding:14px;border-radius:12px;border-left:5px solid #0a5c36;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:12px}
+.avatar{width:60px;height:60px;background:linear-gradient(135deg,#0a5c36,#0d7a47);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;border:3px solid #ffc107;box-shadow:0 4px 10px rgba(0,0,0,0.15);flex-shrink:0}
+.avatar.gold{background:linear-gradient(135deg,#b8860b,#ffc107);color:#222}
+.leader b{display:block}
+.leader span{font-size:13px;color:#666}
+label{font-weight:700;font-size:14px;display:block;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:15px;font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#0a5c36}
+.btn{background:#0a5c36;color:white;border:none;padding:14px;width:100%;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;margin-top:14px}
+.btn:hover{background:#084a2b}
+.btn-gold{background:#ffc107;color:#222}
+.success{background:#d4edda;border:2px solid #0a5c36;padding:16px;border-radius:10px;display:none;margin-top:14px}
+.success b{color:#0a5c36;font-size:18px}
+.mda-row{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eee}
+.mda-row:last-child{border:none}
+.pill{padding:4px 10px;border-radius:20px;font-size:12px;font-weight:800}
+.green{background:#d4edda;color:#0a5c36}
+.yellow{background:#fff3cd;color:#856404}
+.red{background:#f8d7da;color:#721c24}
+footer{background:#222;color:white;text-align:center;padding:20px 16px;font-size:13px;margin-top:20px}
+footer a{color:#ffc107;text-decoration:none}
+.hidden{display:none}
+@media(max-width:600px){.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}}
 </style>
 </head>
 <body>
-<div class="topbar"><span>🇳🇬 Federal Republic of Nigeria</span><span>ReportGov | PEBEC</span></div>
-<div class="hero">
+
+<header>
 <div class="logo">PE</div>
 <h1>Presidential Enabling Business Environment Council</h1>
-<p>ReportGov - Report issues with MDAs, track them transparently. 72-hour SLA. Built as Sample Rebuild by Ijudigal Thomas.</p>
-<p style="margin-top:12px"><a href="index.html" style="color:white;font-weight:bold">← Back to Portfolio</a></p>
-</div>
-<nav><a href="#townhall">Townhall</a><a href="#report">Report Issue</a><a href="#track">Track</a><a href="#leaderboard">Leaderboard</a><a href="#login">Staff Login</a></nav>
-<div class="wrap">
+<p>ReportGov - Report Government Service Issues</p>
+<div class="badge">SAMPLE REBUILD BY IJUDIGAL THOMAS</div>
+<p style="margin-top:10px;font-size:13px">B.Sc. Cyber Security (NAUB) | Full-Stack Developer | Bungudu, Zamfara</p>
+</header>
 
-<div class="grid">
-<div class="stat"><b>69</b>MDAs Onboarded</div>
-<div class="stat"><b>1,240</b>Reports Resolved</div>
-<div class="stat"><b>48hrs</b>Avg Response</div>
-<div class="stat"><b>72hrs</b>SLA Target</div>
-</div>
+<nav>
+<button onclick="show('townhall',this)" class="active">Townhall</button>
+<button onclick="show('report',this)">Report Issue</button>
+<button onclick="show('track',this)">Track Report</button>
+<button onclick="show('leaderboard',this)">Leaderboard</button>
+<button onclick="show('login',this)">Staff Login</button>
+</nav>
 
-<div class="card" id="townhall">
-<h2>🏛️ PEBEC Townhall - Citizen Engagement</h2>
-<p>PEBEC holds townhalls with businesses, startups, and citizens to hear bottlenecks in doing business in Nigeria - from CAC registration delays to NAFDAC approvals and Immigration.</p>
-<div style="margin-top:14px">
-<div class="leader"><div class="avatar">VP</div><div><b>His Excellency, Vice President Kashim Shettima</b><br><span style="color:#555;font-size:14px">Chairman, PEBEC - Leading reforms for Ease of Doing Business</span><br><span class="badge">Leadership</span><span class="badge">Reforms</span></div></div>
-<div class="leader"><div class="avatar">DG</div><div><b>Princess Zahrah Mustapha Audu</b><br><span style="color:#555;font-size:14px">Director-General, PEBEC - Driving ReportGov, Townhalls & MDA Accountability</span><br><span class="badge">ReportGov</span><span class="badge">Townhall</span></div></div>
-</div>
-<p style="font-size:13px;color:#666;margin-top:8px">Sample rebuild for demonstration. Official site: pebec.gov.ng</p>
+<div class="container">
+<div class="stats">
+<div class="stat"><b>69</b><span>MDAs Covered</span></div>
+<div class="stat"><b>1,240</b><span>Reports Resolved</span></div>
+<div class="stat"><b>48hrs</b><span>Avg. Response</span></div>
 </div>
 
-<div class="card" id="report">
-<h2>📝 Report an Issue - ReportGov Form</h2>
-<p style="font-size:14px;color:#555">Your report gets a tracking ID. MDAs must respond within 72 hours.</p>
-<label>Your Full Name</label>
-<input id="name" placeholder="e.g. Ijudigal Thomas">
-<label>Select MDA</label>
-<select id="mda">
-<option>CAC - Corporate Affairs Commission</option>
-<option>NAFDAC</option>
-<option>Nigeria Immigration Service</option>
-<option>FIRS - Federal Inland Revenue</option>
-<option>SON - Standards Organisation</option>
-<option>NITDA</option>
-<option>Others</option>
-</select>
-<label>State</label>
-<select id="state"><option>Zamfara</option><option>Lagos</option><option>Abuja FCT</option><option>Kano</option><option>Kaduna</option><option>Rivers</option><option>Others</option></select>
-<label>Issue Type</label>
-<select id="type"><option>Delay in Service</option><option>Extra Charges / Extortion</option><option>Website / Portal Down</option><option>Unprofessional Staff</option><option>Others</option></select>
-<label>Describe Issue (min 10 characters)</label>
-<textarea id="issue" rows="4" placeholder="e.g. I applied for CAC registration 2 weeks ago, no feedback..."></textarea>
-<button onclick="submitReport()">SUBMIT REPORT → Get Tracking ID</button>
-<div class="success" id="successBox"></div>
-<p style="font-size:12px;color:#888;margin-top:10px">Security: Input is sanitized to block XSS. Demo stores in browser - Full backend in /backend/server.js uses same validation + real DB.</p>
+<!-- TOWNHALL -->
+<div id="townhall" class="card">
+<h2>🏛️ PEBEC Townhall - Leadership</h2>
+<p>Meet the leaders driving Ease of Doing Business in Nigeria.</p>
+<div class="leader">
+<div class="avatar">VP</div>
+<div><b>Sen. Kashim Shettima, GCON</b><span>Vice President & Chairman, PEBEC</span></div>
 </div>
-
-<div class="grid">
-<div class="card" id="track">
-<h2>🔍 Track Your Report</h2>
-<input id="trackId" placeholder="Enter Tracking ID e.g. PEBEC-2026-1234">
-<button onclick="trackReport()">TRACK REPORT</button>
-<div id="trackResult" style="margin-top:12px;font-size:14px"></div>
+<div class="leader">
+<div class="avatar gold">DG</div>
+<div><b>Princess Zahrah Mustapha-Audu</b><span>Director-General, PEBEC</span></div>
 </div>
-<div class="card" id="login">
-<h2>🔐 Staff / Admin Login</h2>
-<p style="font-size:14px;color:#555">Demo: <b>demo@pebec.ng / Demo123</b></p>
-<input id="email" placeholder="Email" value="demo@pebec.ng">
-<input id="pass" type="password" placeholder="Password" value="Demo123">
-<button onclick="login()">LOGIN AS ADMIN</button>
-<div id="loginResult" style="margin-top:12px;font-size:14px"></div>
-<p style="font-size:12px;color:#888;margin-top:8px">Role-Based Access: Admin sees all reports. Citizen sees only own. Backend: POST /api/login</p>
-</div>
-</div>
-
-<div class="card" id="leaderboard">
-<h2>🏆 MDA Leaderboard - Who Responds Fastest?</h2>
-<table>
-<tr><th>MDA</th><th>Reports</th><th>Resolved</th><th>Avg Time</th><th>Rating</th></tr>
-<tr><td>CAC</td><td>320</td><td>298</td><td>36hrs</td><td>⭐ 4.8</td></tr>
-<tr><td>NAFDAC</td><td>210</td><td>189</td><td>42hrs</td><td>⭐ 4.6</td></tr>
-<tr><td>Immigration</td><td>180</td><td>150</td><td>52hrs</td><td>⭐ 4.2</td></tr>
-<tr><td>FIRS</td><td>150</td><td>140</td><td>38hrs</td><td>⭐ 4.7</td></tr>
-</table>
-<p style="font-size:13px;color:#666;margin-top:10px">Transparency drives performance. Data from /api/stats in backend.</p>
-</div>
-
-<div class="card">
-<h2>👨‍💻 About This Sample</h2>
-<p>Built by <b>Ijudigal Thomas</b> - B.Sc. Cyber Security, NAUB | Full-Stack Developer | Bungudu, Zamfara</p>
-<p style="margin-top:8px">Frontend: HTML/CSS/JS | Backend: Node.js + Express in <b>/backend/server.js</b> | Database: JSON demo ready for MongoDB/Convex | Security: XSS sanitization, validation, RBAC</p>
-<p style="margin-top:8px"><a href="https://github.com/ijuthomas123/ijuthomas123.github.io" target="_blank" style="color:#0a7a42;font-weight:bold">View Full-Stack Code on GitHub →</a></p>
-</div>
-
-</div>
-<footer>© 2026 PEBEC Sample Rebuild by Ijudigal Thomas | For Demonstration for PEBEC Application | Official PEBEC: pebec.gov.ng</footer>
-
-<script>
-function clean(s){return s.replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-function submitReport(){
-let n=document.getElementById('name').value.trim();
-let m=document.getElementById('mda').value;
-let s=document.getElementById('state').value;
-let t=document.getElementById('type').value;
-let iss=document.getElementById('issue').value.trim();
-if(n.length<2){alert('Please enter your name');return}
-if(iss.length<10){alert('Please describe issue - at least 10 characters');return}
-let id='PEBEC-2026-'+Math.floor(1000+Math.random()*9000);
-let box=document.getElementById('successBox');
-box.style.display='block';
-box.innerHTML='<b>✅ Report Submitted Successfully!</b><br>Tracking ID: <b>'+id+'</b><br>MDA: '+clean(m)+' | State: '+clean(s)+' | Type: '+clean(t)+'<br>Status: <b>Received</b> - MDA must respond within 72 hours.<br><br>Save this ID to track your report below.';
-localStorage.setItem(id, JSON.stringify({name:clean(n),mda:m,status:'Received'}));
-document.getElementById('trackId').value=id;
-}
-function trackReport(){
-let id=document.getElementById('trackId').value.trim();
-let res=document.getElementById('trackResult');
-if(!id){res.innerHTML='Enter Tracking ID';return}
-let data=localStorage.getItem(id);
-if(data){let d=JSON.parse(data);res.innerHTML='<b>Found:</b> '+id+'<br>Status: <b>'+d.status+'</b><br>MDA: '+d.mda+'<br>SLA: Within 72hrs';}
-else{res.innerHTML='Report <b>'+clean(id)+'</b> not found in this demo browser. In full backend, it would query GET /api/reports/'+clean(id);}
-}
-function login(){
-let e=document.getElementById('email').value;
-let p=document.getElementById('pass').value;
-let r=document.getElementById('loginResult');
-if(e==='demo@pebec.ng' && p==='Demo123'){r.innerHTML='<b style="color:green">✅ Welcome Admin! Role: Admin - You can view all reports.</b>';}
-else{r.innerHTML='<b style="color:red">❌ Invalid credentials - Attempt logged.</b>';}
-}
-</script>
-</body>
-</html>
+<div style="background:#fff8e1;padding:14px;border-radius:10px;margin-top:12px">
+<b>📢 Next Townhall: Ease
